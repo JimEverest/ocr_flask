@@ -205,6 +205,7 @@ class ddocr:
         image = self.convert_to_bytes(image_input)
         res = self.ocr.classification(image)#bytes, str, pathlib.PurePath, Image.Image
         print(res)
+        return res
 
 
 if __name__ == '__main__':
