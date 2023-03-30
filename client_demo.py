@@ -4,7 +4,9 @@ import io
 from PIL import Image
 import os
 
-API_ENDPOINT = 'http://localhost:5000/image-big'
+# API_ENDPOINT = 'http://localhost:5000/image-big'
+
+API_ENDPOINT = 'http://120.48.71.76/image-big'
 
 def send_base64_encoded_image(image_path):
     with open(image_path, 'rb') as img_file:

@@ -1,4 +1,6 @@
 temp/results/test
-temp/results/
-temp/intermedia/
+temp/results/*
+!temp/results/place.txt
+temp/intermedia/*
+!temp/intermedia/place.txt
 __pycache__/ocr.cpython-38.pyc
