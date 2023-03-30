@@ -76,20 +76,18 @@ def image_big():
 def image_small():
     if 'image' in request.files:
         image = request.files['image']
-
+        image = oc.convert_to_bytes(image)
         # width, height = get_image_size(image)
     elif 'image_base64' in request.form:
         image_base64 = request.form['image_base64']
         # log_file(image_base64)
         image_data = base64.b64decode(image_base64)
-        image = io.BytesIO(image_data)
+        image = oc.convert_to_bytes(image_data)
 
         # width, height = get_image_size(image)
     elif 'image_url' in request.form:
         image_url = request.form['image_url']
-        response = requests.get(image_url)
-        image_data = response.content
-        image = io.BytesIO(image_data)
+        image = oc.convert_to_bytes(image_url)
 
         # width, height = get_image_size(image)
     else:
